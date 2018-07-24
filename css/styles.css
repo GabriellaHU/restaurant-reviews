@@ -196,6 +196,7 @@ nav h1 a {
 	flex-wrap: wrap;
 	justify-content: center;
 	flex-basis: 100%;
+	max-width: 1280px;
 
 	margin: 0;
 	padding: 50px 16px 16px;
@@ -278,9 +279,10 @@ nav h1 a {
 
 .inside #map-container {
   /* background: blue none repeat scroll 0 0; */
-	margin-top: 130px;
+	margin-top: 120px;
   height: 300px;
 	flex-basis: 100%;
+	z-index: 999;
 }
 
 .inside #map-container #map {
@@ -293,9 +295,9 @@ nav h1 a {
 #reviews-container {
 	flex-basis: 100%;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	flex-wrap: wrap;
-	max-width: 800px;
+	max-width: 1280px;
   /* border-bottom: 1px solid #d9d9d9; */
 	padding: 16px;
 }
@@ -306,7 +308,14 @@ nav h1 a {
   font-family: 'Open Sans', sans-serif;
   font-size: 20pt;
   margin: 30px 0;
+	text-align: center;
   text-transform: uppercase;
+}
+
+.restaurant-wrapper {
+	flex-basis: 100%;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 #restaurant-img {
@@ -316,6 +325,7 @@ nav h1 a {
 
 #restaurant-cuisine {
 	flex-basis: 100%;
+	box-sizing: border-box;
   background-color: #333;
   color: #ddd;
   font-size: 14pt;
@@ -329,6 +339,7 @@ nav h1 a {
 #restaurant-address {
 	flex-basis: 100%;
   font-size: 12pt;
+	text-align: center;
 	color: #f18200;
 	margin-bottom: 40px;
 }
@@ -348,6 +359,7 @@ nav h1 a {
 	flex-basis: 100%;
 	display: flex;
 	flex-wrap: wrap;
+  justify-content: space-between;
 	padding: 0;
 }
 
@@ -395,9 +407,12 @@ nav h1 a {
 /*--------------------------------------------------------------------*/
 /*--------------------------------------------------------------------*/
 
-/* mobile-first */
-/* tablet */
+/* #restaurants-list,
+#reviews-container {
+	box-sizing: border-box;
+} */
 
+/* tablet */
 @media screen and (min-width: 600px) {
 	 #restaurants-list {
 		 padding-left: 50px;
@@ -405,25 +420,34 @@ nav h1 a {
 		 justify-content: space-between;
 	 }
 
-   #restaurants-list li {
+   #restaurants-list li,
+	 #reviews-list li {
 		 flex-basis: 47%;
+	 }
+
+	 #restaurant-container {
+		 justify-content: space-between;
 	 }
 
 }
 
 /* desktop */
 @media screen and (min-width: 1280px) {
-	#restaurants-list {
-		max-width: 1280px;
+
+	#restaurants-list li,
+	#reviews-list li {
+	  flex-basis: 31%;
+  }
+
+	.restaurant-wrapper {
+		flex-basis: 47%;
+		align-items: flex-end;
 	}
 
-	#restaurants-list li {
-	 flex-basis: 31%;
- }
+	#restaurant-address {
+		text-align: left;
+			  margin: 0;
+	}
 
- #restaurant-container,
- #reviews-container {
-	 flex-basis: 50%;
-}
 
 }
