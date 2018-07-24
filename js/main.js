@@ -181,10 +181,15 @@ createRestaurantHTML = (restaurant) => {
   address.innerHTML = restaurant.address;
   snippet.append(address);
 
+  // const more = document.createElement('button');
+  // more.attr('name', 'details');
+  //
+  // li.append(details);
+
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  snippet.append(more)
+  li.append(more);
 
   return li
 }
