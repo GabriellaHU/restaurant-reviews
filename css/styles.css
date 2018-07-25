@@ -1,6 +1,8 @@
 /* @charset "utf-8"; */
 /* CSS Document */
 
+/* needed for A11Y */
+.hidden,
 label {
 	display: none;
 }
